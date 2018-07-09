@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Favicon icon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+   <title>BOOKscalo</title>
+   <!-- Bootstrap Core CSS -->
+   <link href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+   <!-- Custom CSS -->
+   <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/colors/default-dark.css'%}" id="theme" rel="stylesheet">
+
+</head>
+<body class="fix-header card-no-border fix-sidebar">
+  <!-- Cuerpo principal -->
+   <div id="main-wrapper">
+      <!-- Menu cabecera -->
+      <header class="topbar">
+         <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+               <a class="navbar-brand" href="/book/index">
+                  <!-- Logo icon -->
+                  <b>
+                     <!-- Dark Logo icon -->
+                     <img src="{% static 'images/BOOKscalo-logo.png' %}" style="max-width: 60px; max-height: 60px" alt="homepage" class="dark-logo" />
+
+                  </b>
+                  <!--End Logo icon -->
+                  <!-- Logo text -->
+                  <span>
+                     <!-- dark Logo text -->
+                     <img src="{% static 'images/BOOKscalo-text.png' %}" alt="homepage" class="dark-logo" />
+                  </span>
+               </a>
+            </div>
+            <div class="navbar-collapse">
+               <!-- ============================================================== -->
+               <!-- toggle and nav items -->
+               <!-- ============================================================== -->
+               <ul class="navbar-nav mr-auto">
+                  <!-- This is  -->
+                  <li class="nav-item">
+                     <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
+                       <img src="{% static 'images/iconos/menu.svg' %}" height="30px" width="30px" alt="menu">
+
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                        <img src="{% static 'images/iconos/menu.svg' %}" height="30px" width="30px" alt="menu">
+                     </a>
+                  </li>
+                  <li class="nav-item hidden-sm-down"></li>
+               </ul>
+               
+
+               <!-- ============================================================== -->
+               <!-- Add book -->
+               <!-- ============================================================== -->
+               <ul class="navbar-nav my-lg-0">
+                  <a class="has-arrow waves-effect waves-dark" href="{% url 'add_book' %}" aria-expanded="false">
+                  <img src="{% static 'images/iconos/add.png' %}" alt="add_book" class="" />
+               </ul>
+
+               <!-- ============================================================== -->
+               <!-- Profile -->
+               <!-- ============================================================== -->
+               <ul class="navbar-nav my-lg-0">
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{% static 'images/users/profile.jpg' %}" alt="user" class="profile-pic" />
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                        <ul class="dropdown-user">
+                           <li>
+                              <div class="dw-user-box">
+                                 <div class="u-img">
+                                    <img src="{% static 'images/users/profile.jpg' %}" alt="user">
+                                 </div>
+                                 <div class="u-text">
+                                    <h4>Steave Jobs</h4>
+                                    <p class="text-muted">stevejobs@gmail.com</p>
+                                    <a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">Ver perfil</a>
+                                 </div>
+                              </div>
+                           </li>
+                           <li role="separator" class="divider"></li>
+                           <li>
+                              <a href="#">
+                                 <a class="has-arrow waves-effect waves-dark " href="{% url 'list_book' %}" 
+                     aria-expanded="false">
+                                 <i class="ti-wallet"></i> Mi biblioteca digital</a>
+                           </li>
+                           <li>
+                              <a href="#">
+                                 <i class="ti-email"></i>Mis mensajes</a>
+                           </li>
+                           <li>
+                              <a href="#">
+                                 <i class="ti-email"></i>Mis notificaciones</a>
+                           </li>
+                           <li role="separator" class="divider"></li>
+                           <li>
+                              <a href="#">
+                                 <i class="fa fa-power-off""></i> Logout</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+
+               </ul>
+
+            </div>
+
+         </nav>
+      </header>
+      <!-- Fin Menu cabecera -->
+      <!-- Menu izquierda -->
+      <aside class="left-sidebar">
+         <!-- Sidebar scroll-->
+         <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+               <ul id="sidebarnav">
+                  <li class="nav-devider"></li>
+                  {% block menu %}
+
+                  <li class="nav-small-cap">CATEGORÍAS</li>
+
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/AntiguedadesyColeccionables/_/N-9q">Antiguedades y Coleccionables</a>
+                     </li>               
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Arquitectura/_/N-0Zan">Arquitectura</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Arte/_/N-b7">Arte</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/BiografiaYAutobiografia/_/N-0Zc9">Biografía y Autobiografía</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CuerpoMenteYEspiritu/_/N-0Zdt">Cuerpo, Mente y Espíritu</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/NegociosyEconomia/_/N-0Zem">Negocios y Economia</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Calendarios/_/N-gs">Calendarios</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/FiccionParaNinos/_/N-gu">Ficción para Niños</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/NinosYJovenes/_/N-0Zio">Niños y Jóvenes</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/ComicsYNovelasGraficas/_/N-kk">Comics y Novelas Gráficas</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/ComputacionEInternet/_/N-0Zks">Computación e Internet</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CocinaComidayVinos/_/N-m8">Cocina, Comida y Vinos</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/ManualidadesyHobbies/_/N-0Zn3">Manualidades y Hobbies</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Drama/_/N-0Znl">Drama</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Educacion/_/N-nw">Educación</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/FamiliaYRelaciones/_/N-0Zos">Familia y Relaciones</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Ficcion/_/N-0Zq2">Ficción</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/EstudioDeLenguasExtranjeras/_/N-0Zr6">Estudio de Lenguas Extranjeras</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Juegos/_/N-rw">Juegos</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Jardineria/_/N-se">Jardinería</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/SaludYBienestar/_/N-t4">Salud y Bienestar</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Geography-History/_/N-ul">Historia y Geografía</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CasaYHogar/_/N-vy">Casa y Hogar</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Humor/_/N-0Zwf">Humor</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/LenguaYLiteratura/_/N-0Zww">Lengua y Literatura</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Leyes/_/N-xl">Leyes</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/ColeccionesLiterarias/_/N-0Zyi">Colecciones Literarias</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CriticaLiteraria/_/N-0Zyw">Crítica Literaria</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Matematicas/_/N-0Zzs">Matemáticas</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Medicina/_/N-10a">Medicina</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Musica/_/N-0Z129">Música</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/NaturalezaYAireLibre/_/N-0Z13k">Naturaleza y Aire libre</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/ArtesEscenicas/_/N-0Z14v">Artes Escénicas</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/MascotasYAnimales/_/N-0Z15g">Mascotas y Animales</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Filosofia/_/N-15s">Filosofíaa</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Fotografia/_/N-0Z169">Fotografía</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Poesia/_/N-0Z16r">Poesía</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CienciasPoliticas/_/N-0Z175">Ciencias Políticas</a>
+                     </li>
+                     <li class="nav-small-cap">   
+                        <a href="/Libreria/Browse/Psicologia/_/N-0Z17r">Psicología</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Referencia/_/N-18i">Referencia</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/ReligionYEspiritualidad/_/N-0Z19c">Religión y Espiritualidad</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Ciencia/_/N-0Z1br">Ciencia</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Autoayuda/_/N-0Z1cu">Autoayuda</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CienciasSociales/_/N-0Z1dl">Ciencias Sociales</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/DeportesYRecreacion/_/N-0Z1ey">Deportes y Recreación</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Papeleria/_/N-0Z2nn">Papelería</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/GuiasDeAyuda/_/N-0Z1gd">Guías de Ayuda</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Tecnologia/_/N-1h0">Tecnología</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Transporte/_/N-0Z1hs">Transporte</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Viajes/_/N-0Z1i8">Viajes</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/CrimenesVerdaderos/_/N-0Z1j3">Crímenes Verdaderos</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/VideoYDvd/_/N-0Z1jb">Video y DVD</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Adult-Fiction-Young/_/N-0Z2rx">Young Adult Fiction</a>
+                     </li>
+                     <li class="nav-small-cap">
+                        <a href="/Libreria/Browse/Adult-Nonfiction-Young/_/N-0Z2ry">Young Adult Nonfiction</a>
+                     </li>
+                  {% endblock menu %}
+               </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+         </div>
+         <!-- End Sidebar scroll-->
+      </aside>
+      <!-- Fin Menu izquierda -->
+      <!-- Contenido -->
+      <div class="page-wrapper" style="min-height: 701px;">
+        {% block contenido %}
+        {% endblock contenido %}
+        </div>
+      </div>
+      <!-- Fin Contenido -->
+   </div>
+
+   <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+   <!-- Bootstrap tether Core JavaScript -->
+   <script src="{% static 'plugins/bootstrap/js/popper.min.js' %}"></script>
+   <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+   <!-- slimscrollbar scrollbar JavaScript -->
+   <script src="{% static 'js/perfect-scrollbar.jquery.min.js' %}"></script>
+   <!--Wave Effects -->
+   <script src="{% static 'js/waves.js' %}"></script>
+   <!--Menu sidebar -->
+   <script src="{% static 'js/sidebarmenu.js' %}"></script>
+   <!--stickey kit -->
+   <!-- <script src="{% static 'plugins/sticky-kit-master/dist/sticky-kit.min.js' %}"></script> -->
+   <!-- <script src="{% static 'plugins/sparkline/jquery.sparkline.min.js' %}"></script> -->
+   <!--Custom JavaScript -->
+   <script src="{% static 'js/custom.min.js'%}"></script>
+</body>
+</html>
