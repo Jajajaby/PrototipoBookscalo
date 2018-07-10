@@ -130,4 +130,5 @@ MEDIA_ROOT = 'media'
 
 
 #Activate Django-Heroku
+import django_heroku
 django_heroku.settings(locals())
